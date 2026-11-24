@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum Flask - Method POST</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <main class="card">
+    <h1>Form Input Data🙂🙂</h1>
+
+    <form action="/submit" method="POST">
+      <label for="nama">Nama:</label>
+      <input id="nama" type="text" name="nama" placeholder="Masukkan nama..." required>
+
+      <label for="nim">NIM:</label>
+      <input id="nim" type="text" name="nim" placeholder="Masukkan NIM..." required>
+
+      <button type="submit">Kirim</button>
+    </form>
+
+    {% if hasil_nama and hasil_nim %}
+      <div class="hasil">
+        <label>Hasil Parsing POST👌:</label>
+        <p>Nama: {{ hasil_nama }}</p>
+        <p>NIM: {{ hasil_nim }}</p>
+      </div>
+    {% endif %}
+  </main>
+</body>
+</html>
